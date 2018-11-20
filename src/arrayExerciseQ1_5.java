@@ -5,16 +5,17 @@
  * Assignment:      A1Q1
  * Program Name:    arrayExercisesQ1_5
  *
- * Description:     This program will prompt the user to enter 
- *                  5 integers from the keyboard and then print 
- *                  out the numbers in their original order and their 
- *                  reverse order.
+ * Description:     This program will prompt the user for the number 
+ *                  of integers to be entered. The user will then 
+ *                  print out the integers in their original and 
+ *                  reverse orders.
  *
- * Input:           The user will input 5 integers from the keyboard.
+ * Input:           The numbers of integers to be entered, 
+ *                  and the integers to be printed out in 
+ *                  their original and reverse orders.
  *
- * Output:          The output will be the 5 integers printed in 
- *                  their original and their reverse order in 
- *                  to the console window.
+ * Output:          The integers entered by the user in 
+ *                  their original and reverse orders.
  ***********************************************************************/
  
  // import java libraries here as needed
@@ -124,7 +125,10 @@ public class arrayExerciseQ1_5 {  // begin class
        int len = 0;
        String strin = "";
        
-       strin = JOptionPane.showInputDialog("Enter up to 5 integers");
+       strin = JOptionPane.showInputDialog("How many numbers do you want to enter?");
+       int numberOfIntegersToBeInput = Integer.parseInt(strin);
+       
+       strin = JOptionPane.showInputDialog("Enter " + numberOfIntegersToBeInput + " integers");
        String[] tokens = strin.split(delim);
        
        len = tokens.length;     // get the acual number of elements in the list
