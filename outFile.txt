@@ -1,0 +1,6 @@
+*******************************************
+Name:		A. Mittal
+Class:		CS30S-002
+Assignment:	Simple Static Methods Exercise
+*******************************************
+end of proecessing
