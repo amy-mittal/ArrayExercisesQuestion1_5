@@ -2,7 +2,7 @@
  * Programmer:	Amy Mittal
  * Class:       CS30S-002
  *
- * Assignment:      Array Exercises 1 Question 3
+ * Assignment:      Array Exercises 1 Question 4
  * Program Name:    arrayExercisesQ1_5
  *
  * Description:     This program will prompt the user to choose a 
@@ -51,6 +51,8 @@ public class arrayExerciseQ1_5 {  // begin class
         int[] list = new int[100];
 //        int[] reverseList = new int[100];
         int actualLength = 0;   // actual length of the array
+        int minimumListIndex;
+        int maximumListIndex;
     	
     // ***** Create Objects *******
     
@@ -71,7 +73,10 @@ public class arrayExerciseQ1_5 {  // begin class
         actualLength = loadList(list, delim);
 
     // ************************ Processing ***************************
+    
+        minimumListIndex = findMinimumIndexValue(actualLength, list);
         
+        maximumListIndex = findMaximumIndexValue(actualLength, list);
 
     // ************************ Print Output ****************************
     
@@ -83,6 +88,10 @@ public class arrayExerciseQ1_5 {  // begin class
         
         System.out.println("\nNumber you wanted to print:");
         printNumberUserWantsToPrint(actualLength, list);
+        
+        System.out.println("\nSmallest Integer from list:\n" + list[minimumListIndex]);
+        
+        System.out.println("\nLargest Integer from list:\n" + list[maximumListIndex]);
     
     // ******** closing message *********
         
@@ -98,13 +107,52 @@ public class arrayExerciseQ1_5 {  // begin class
     
     // ************************** static methods ***************************
     /***********************************************************
+     *  Purpose:    print number the largest number from the 
+     *              array after a change has been made
+     *  Interface:  int actualLength --> len: actual length of the list
+     *              int[] list --> base address of the array
+     *  Returns:    index of maximum value
+     ************************************************************/
+    public static int findMaximumIndexValue (int len, int[]list){           // QUESTION 5
+        int maximumIndex = 0;       // positon (index) of the largest integer in the array
+        
+        for (int i = 0; i < len; i++){
+            if (list[i] > maximumIndex){
+                maximumIndex = i;
+            } // end if
+        } // end for loop processing
+        
+        return maximumIndex;
+    } // end findMaximumIndexValue
+    
+    /***********************************************************
+     *  Purpose:    print number the smallest number from the 
+     *              array after a change has been made
+     *  Interface:  int actualLength --> len: actual length of the list
+     *              int[] list --> base address of the array
+     *  Returns:    index of minimum value
+     ************************************************************/
+    public static int findMinimumIndexValue(int len, int[]list){          // QUESTION 5
+        int minimumIndex = 0;       // position (index) of the smallest integer in the array
+        
+        for (int i = 0; i < len; i++){
+            if (list[i] < minimumIndex){
+//                minimumValue = list[i];
+                minimumIndex = i;
+            } // end if
+        } // end for loop processing
+        
+        return minimumIndex;
+    } // end findMinimumValue
+    
+    /***********************************************************
      *  Purpose:    print number the user wants to print 
      *              from the array to the console window
      *  Interface:  int actualLength --> len: actual length of the list
      *              int[] list --> base address of the array
      *  Returns:    Number user wants to print to console window
      ************************************************************/
-    public static int printNumberUserWantsToPrint(int len, int[]list){
+    public static int printNumberUserWantsToPrint(int len, int[]list){        // QUESTION 3
         String strin = "";
         int index = 0;
         
@@ -187,7 +235,7 @@ public class arrayExerciseQ1_5 {  // begin class
         bannerOut = "*******************************************\n";
         bannerOut += "Name:		Amy Mittal\n";
         bannerOut += "Class:		CS30S-002\n";
-        bannerOut += "Assignment:	Simple Static Methods Exercise\n";
+        bannerOut += "Assignment:	Array Exercises 1 - Question 4\n";
         bannerOut += "*******************************************\n\n";
         
         return bannerOut;
@@ -202,7 +250,7 @@ public class arrayExerciseQ1_5 {  // begin class
         ft.println("*******************************************");
         ft.println("Name:		A. Mittal");
         ft.println("Class:		CS30S-002");
-        ft.println("Assignment:	Array Exercises 1 - Question 3");
+        ft.println("Assignment:	Array Exercises 1 - Question 4");
         ft.println("*******************************************");
     } // end fileBanner
     
@@ -215,7 +263,8 @@ public class arrayExerciseQ1_5 {  // begin class
         System.out.println("*******************************************");
         System.out.println("Name:		A. Mittal");
         System.out.println("Class:		CS30S-002");
-        System.out.println("Assignment:	Array Exercises 1 - Question 3");
+        System.out.println("Assignment:	Array Exercises 1 - Question 4");
         System.out.println("*******************************************");        
     } // end printBanner
+    
 }  // end class
